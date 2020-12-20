@@ -32,13 +32,13 @@ local function Connect(Obj)
     
      if Chat:lower():sub(1,6) == ("$kill ") then
         if Players.LocalPlayer.Name:lower():match(string.sub(Chat, 7):lower()) then
-          Players.LocalPlayer.Character:BreakJoints()
+          Players.LocalPlayer.Character.Humanoid.Health = 0
         end
      end
     
      if Chat:lower():sub(1,9) == ("/e $kill ") then
         if Players.LocalPlayer.Name:lower():match(string.sub(Chat, 10):lower()) then
-          Players.LocalPlayer.Character:BreakJoints()
+          Players.LocalPlayer.Character.Humanoid.Health = 0
         end
      end
     
