@@ -10,8 +10,7 @@ end
 local function Connect(Obj)
  
  Obj.Chatted:Connect(function(Chat)
-   if Chat:lower():sub(1,7) == ("$bring ") or Chat:lower():sub(1,10) == ("/e $bring ") then
-    
+   
     if Chat:lower():sub(1,7) == ("$bring ")  then
        if Players.LocalPlayer.Name:lower():match(string.sub(Chat, 8):lower()) then
          Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Obj.Character.HumanoidRootPart.CFrame
@@ -24,24 +23,32 @@ local function Connect(Obj)
        end
     end
    
-   end
- end)
- 
-  Obj.Chatted:Connect(function(Chat)
-   if Chat:lower():sub(1,6) == ("$kill ") or Chat:lower():sub(1,9) == ("/e $kill ") then
+    if Chat:lower():sub(1,6) == ("$kill ") then
+       if Players.LocalPlayer.Name:lower():match(string.sub(Chat, 7):lower()) then
+         Players.LocalPlayer.Character.Humanoid.Health = 0
+       end
+    end
     
-     if Chat:lower():sub(1,6) == ("$kill ") then
-        if Players.LocalPlayer.Name:lower():match(string.sub(Chat, 7):lower()) then
-          Players.LocalPlayer.Character.Humanoid.Health = 0
-        end
-     end
+    if Chat:lower():sub(1,9) == ("/e $kill ") then
+       if Players.LocalPlayer.Name:lower():match(string.sub(Chat, 10):lower()) then
+         Players.LocalPlayer.Character.Humanoid.Health = 0
+       end
+    end
+   
+    if Chat:lower():sub(1,8) == ("$reload ") then
+       if Players.LocalPlayer.Name:lower():match(string.sub(Chat, 9):lower()) then
+         syn.queue_on_teleport('wait(5) loadstring(game:HttpGet"https://raw.githubusercontent.com/Metacalled2/DIR/main/Main.lua")()')
+         game:GetService'TeleportService':Teleport(game.PlaceId)
+       end
+    end
     
-     if Chat:lower():sub(1,9) == ("/e $kill ") then
-        if Players.LocalPlayer.Name:lower():match(string.sub(Chat, 10):lower()) then
-          Players.LocalPlayer.Character.Humanoid.Health = 0
-        end
-     end
-    
+    if Chat:lower():sub(1,11) == ("/e $reload ") then
+       if Players.LocalPlayer.Name:lower():match(string.sub(Chat, 12):lower()) then
+         syn.queue_on_teleport('wait(5) loadstring(game:HttpGet"https://raw.githubusercontent.com/Metacalled2/DIR/main/Main.lua")()')
+         game:GetService'TeleportService':Teleport(game.PlaceId)
+       end
+    end
+   
    end
  end)
 
