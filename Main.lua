@@ -1,3 +1,7 @@
+wait(6)
+
+warn('LOADING [ 1 ]')
+
 local Players = game:GetService'Players'
 local HttpSer = game:GetService'HttpService'
 
@@ -48,9 +52,7 @@ local function Connect(Obj)
          game:GetService'TeleportService':Teleport(game.PlaceId)
        end
     end
-   
-   end
- end)
+end)
 
 end
 
