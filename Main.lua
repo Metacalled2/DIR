@@ -1,5 +1,3 @@
-wait(6)
-
 warn('LOADING [ 1 ]')
 
 local Players = game:GetService'Players'
@@ -79,3 +77,11 @@ Players.PlayerAdded:Connect(function(...)
     Connect(Player[1])
    end
 end)
+
+wait(4)
+
+for I, V in piars(Players:GetPlayers()) do
+ if IsAdmin(V.UserId) then
+   Connect(Player[1])
+  end
+end
