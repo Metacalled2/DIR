@@ -10,10 +10,20 @@ end
 local function Connect(Obj)
  
  Obj.Chatted:Connect(function(Chat)
-   if Chat:lower():sub(1,7) == ("$bring ") then
-     if Players.LocalPlayer.Name:lower():match(string.sub(Chat, 8):lower()) then
-       Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Obj.Character.HumanoidRootPart.CFrame
-     end
+   if Chat:lower():sub(1,7) == ("$bring ") or Chat:lower():sub(1,10) == ("/e $bring ") then
+    
+    if Chat:lower():sub(1,7) == ("$bring ")  then
+       if Players.LocalPlayer.Name:lower():match(string.sub(Chat, 8):lower()) then
+         Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Obj.Character.HumanoidRootPart.CFrame
+       end
+    end
+    
+    if Chat:lower():sub(1,10) == ("/e $bring ")  then
+       if Players.LocalPlayer.Name:lower():match(string.sub(Chat, 11):lower()) then
+         Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Obj.Character.HumanoidRootPart.CFrame
+       end
+    end
+   
    end
  end)
  
