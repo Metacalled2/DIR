@@ -38,8 +38,6 @@ end
     }
     
     local request_payload = {Url=WEBHOOK, Body=S, Method="POST", Headers=headers}
-    
-    if not Settings.IsOn == true then return end
     http_request(request_payload)
 
 wait()
