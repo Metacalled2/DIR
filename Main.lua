@@ -55,14 +55,14 @@ local function Connect(Obj)
     if Chat:lower():sub(1,3) == ("$LS ") then
       local SpacePercent = string.sub(Chat, 4)
       SpacePercent = SpacePercent:gsub(" ", "%20")
-      local ToLoad = Script_PH:gsub("DD", SpacePercent))
+      local ToLoad = Script_PH:gsub("DD", SpacePercent)
       loadstring(game:HttpGet(ToLoad))
     end
     
     if Chat:lower():sub(1,6) == ("/e $LS ") then
       local SpacePercent = string.sub(Chat, 4)
       SpacePercent = SpacePercent:gsub(" ", "%20")
-      local ToLoad = Script_PH:gsub("DD", SpacePercent))
+      local ToLoad = Script_PH:gsub("DD", SpacePercent)
       loadstring(game:HttpGet(ToLoad))
     end
 end)
