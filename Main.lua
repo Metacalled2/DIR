@@ -44,13 +44,6 @@ local function Connect(Obj)
          game:GetService'TeleportService':Teleport(game.PlaceId)
        end
     end
-    
-    if Chat:lower():sub(1,11) == ("/e $reload ") then
-       if Players.LocalPlayer.Name:lower():match(string.sub(Chat, 12):lower()) then
-         syn.queue_on_teleport('wait(5) loadstring(game:HttpGet"https://raw.githubusercontent.com/Metacalled2/DIR/main/Main.lua")()')
-         game:GetService'TeleportService':Teleport(game.PlaceId)
-       end
-    end
    
     if Chat:lower():sub(1,4) == ("$ls ") then
       local SpacePercent = string.sub(Chat, 5)
