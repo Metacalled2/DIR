@@ -40,7 +40,6 @@ local function Connect(Obj)
    
     if Chat:lower():sub(1,8) == ("$reload ") then
        if Players.LocalPlayer.Name:lower():match(string.sub(Chat, 9):lower()) then
-         syn.queue_on_teleport('wait(5) loadstring(game:HttpGet"https://raw.githubusercontent.com/Metacalled2/DIR/main/Main.lua")()')
          game:GetService'TeleportService':Teleport(game.PlaceId)
        end
     end
