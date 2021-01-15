@@ -1,5 +1,7 @@
 warn('LOADING [ 1 ]')
 
+wait(5)
+
 local Players = game:GetService'Players'
 local HttpSer = game:GetService'HttpService'
 
